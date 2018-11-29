@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+
+
+<script>
+
+
+
+    /*
+
+    При нажатии на кнопку текст в абзаце поменяется.
+
+<input type="submit" value="Нажми на меня" onclick="func()" >
+ <span id="inp">простой текст</span>
+  function func() {
+let input = document.getElementById('inp');
+input.innerHTML = 'текст заменен';
+  }
+
+
+
+При нажатии на кнопку текст в абзаце поменяется h1 <input type="submit" value="Нажми на меня" onclick="func()" >
+        <span id="inp">простой текст</span>
+    function func() {
+        let el = document.getElementById('inp');
+        el.outerHTML = '<h1>абзац превратился в h1</h1>';}
+
+
+
+При нажатии на кнопку абзац станет h3, но текст останется.
+    <input type="submit" value="Нажми на меня" onclick="func()" >
+        <span id="inp">простой текст</span>
+    function func() {
+        let el = document.getElementById('inp');
+        el.outerHTML = '<h1>' + el.innerHTML + '</h1>';
+    }
+
+
+    Нажмите чтобы сложить
+<input type="text" placeholder="введите значение" id="inp1">
+    <input type="text" placeholder="введите значение" id="inp2">
+    <span >=</span>
+    <span id="res"></span>
+    <br>
+    <button onclick="func()">Нажмите чтобы сложить</button>
+
+function func() {
+    let el1 = document.getElementById('inp1').value;
+    let el2 = document.getElementById('inp2').value;
+    let result = document.getElementById('res');
+    let plus = Number(el1) + Number(el2);
+    result.innerHTML = plus;;
+
+
+
+       <p>При нажатии на кнопку текст в каждом абзаце поменяется</p>
+    <p>При нажатии на кнопку текст в каждом абзаце поменяется</p>
+    <h2>А я h2 и не поменяюсь!</h2>
+    <button type="submit" onclick="go()">Нажмите на меня</button>
+    function go() {
+        let arrP = document.getElementsByTagName('p');
+
+        for(i = 0; i < arrP.length; i++)
+        {
+            arrP[i].innerHTML = 'Текст изменен';
+        }
+    }
+
+Работа с getElementsByClassName
+    <h2 class="www">Заголовок с классом www.</h2>
+    <p class="www">Абзац с классом www.</p>
+    <p class="www">Абзац с классом www.</p>
+    <p>Просто абзац, не поменяется.</p>
+    <button onclick="func()" id="inp">Поменять класс</button>
+
+    function func() {
+        let arrP = document.getElementsByClassName('www');
+
+        for(i = 0; i < arrP.length; i++){
+            arrP[i].innerHTML = 'Изменено';
+        }
+    }
+
+
+    <p>Метод querySelectorAll</p>
+    <h2 class="www">Заголовок с классом www.</h2>
+    <p class="www">Абзац с классом www.</p>
+    <p class="www">Абзац с классом www.</p>
+    <p>Просто абзац, не поменяется.</p>
+    <button onclick="func()" id="inp">Поменять класс</button>
+
+    function func() {
+        let arrP = document.querySelectorAll('.www');
+        for(i = 1; i < arrP.length; i++){
+            arrP[i].innerHTML = i+1;
+        }
+    }
+
+
+    Методы getAttribute,
+    <p class="my-class">Абзац с class="my-class".</p>
+        <button onclick="func()">Нажми и я выведу класс абзацы</button>
+    function func() {
+        let abz = document.getElementById('.my-class');
+        alert(abz.getAttribute('class'));
+    }
+
+
+
+    Абзац с class="my-class". Класс задает красный цвет.
+
+    <style>
+    .my-class{
+        color: red;
+    }
+    </style>
+
+    <p id="inp" class="my-class">Абзац с class="my-class"</p>
+        <button onclick="func1()">Нажми и я выведу класс абзаца</button>
+    <button onclick="func2()">Нажми и я удалю атрибут класс</button>
+
+    function func1() {
+        let abz = document.getElementById('inp');
+        alert(abz.getAttribute('class'));
+    }
+
+    function func2() {
+        let abz = document.getElementById('inp');
+        abz.removeAttribute('class');
+    }
+
+
+
+
+
+
+   <style>
+    .my-class{
+        color: red;
+    }
+</style>
+       <p id="inp" class="my-class class">Абзац с class="my-class"</p>
+        <button onclick="func1()">Нажми и я выведу класс абзаца</button>
+    <button onclick="func2()">Нажми и я изменю атрибут class для абзаца на 'new-class'</button>
+
+    function func1() {
+        let abz = document.getElementById('inp');
+        alert(abz.getAttribute('class'));}
+
+    function func2() {
+        let abz = document.getElementById('inp');
+        abz.setAttribute('class', 'new-class');
+    alert('Класс изменен');
+    }
+
+
+
+   Повторите страницу по данному по образцу:
+       <input type="text" id="inp"  onkeyup="func()" placeholder="Введите текст">
+        <p id="out"></p>
+function func() {
+let input = document.getElementById('inp');
+let out = document.getElementById('out');
+out.innerHTML = input.value;
+
+}
+
+<a href="http://google.ru">ссылка 1</a><br>
+<a href="http://tut.by">ссылка 2</a><br>
+<a href="http://yandex.ru">ссылка 3</a><br>
+<button type="submit" onclick="func()">Нажмите на меня</button>
+
+
+function func() {
+    let arr = document.getElementsByTagName('a');
+    for(i = 0; i < arr.length; i++){
+        arr[i].innerHTML = arr[i].innerHTML + arr[i].getAttribute('href');
+    }
+}
+
+
+
+
+
+    <p id="abz">При нажатии на кнопку текст в абзаце поменяется.</p>
+    <button type="submit" onclick="func()">Нажмите на меня</button>
+
+    function func() {
+        let element = document.getElementById('abz');
+element.innerHTML = 'Измененный текст';
+    }
+
+
+
+
+Повторите страницу по данному по образцу (при нажатии на кнопку текст в каждом абзаце поменяется - спереди добавится порядковый номер абзаца):
+<p>Абзац с текстом.</p>
+<p>Абзац с текстом.</p>
+<p>Абзац с текстом.</p>
+<p>Абзац с текстом.</p>
+<p>Абзац с текстом.</p>
+<p>Абзац с текстом.</p>
+<button onclick="func()">Нажми на меня</button>
+function func() {
+let arr = document.getElementsByTagName('p');
+for(i = 0; i < arr.length; i++){
+arr[i].innerHTML = i ;
+}
+}
+
+
+
+    Повторите страницу по данному по образцу (при нажатии на кнопку текст в каждом абзаце поменяется - спереди добавится порядковый номер абзаца):
+    <p>Абзац с текстом.</p>
+    <p>Абзац с текстом.</p>
+    <p>Абзац с текстом.</p>
+    <p>Абзац с текстом.</p>
+    <p>Абзац с текстом.</p>
+    <p>Абзац с текстом.</p>
+    <button onclick="func()">Нажми на меня</button>
+function func() {
+    let arr = document.getElementsByTagName('p');
+for(i = 0; i < arr.length; i++){
+    arr[i].innerHTML = i +'.'+ arr[i].innerHTML;
+}
+}
+
+
+
+*/
+
+
+
+</script>
+</body>
+</html>
