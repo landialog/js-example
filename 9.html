@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    
+ Дана строка. Сделайте заглавным первый символ этой строки не используя цикл.
+ let str = 'javascript';
+     str = str.split('');
+     str[0] = str[0].toUpperCase();
+ let res = str.join('');
+document.write(res);
+
+Дана строка, например, '123456'. Переверните эту строку (сделайте из нее '654321') не используя цикл.
+    let str = '123456';
+    let str2= str.split('').reverse();
+    document.write(str2.join(''));
+
+Дано число, например, 3751.
+ Отсортируйте цифры в нем (сделайте из него 1357) не используя цикл
+let num = '3751';
+let num2 = num.split('').sort();
+document.write(num2.join(''));
+
+Проверьте, что строка начинается на http://
+ let str = 'http://code.mu/javascript.html';
+ let str2 =   str.substr(0, 7);
+ if(str2 == 'http://'){
+     document.write('Да');
+ }  else {
+     document.write('Нет');
+ }
+
+    //Проверьте, что строка заканчивается на .html.
+ let str = 'http://code.mu/javascript.html';
+ let str2 =   str.substr(-5, 5);
+ if(str2 == '.html'){
+     document.write('Да');
+ } else {
+     document.write('Нет');
+ }
+
+
+
+
+
+
+
+
+
+
+
+   
+</script>
+</body>
+</html>

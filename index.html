@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="test">Текст абзаца.</p>
+<input type="submit" onclick="func()">
+
+<script>
+
+    function func() {
+        var elem = document.getElementById('test');
+        elem.outerHTML = '<b>'+elem.innerHTML+'</b>';
+    }
+//Повторите поведение кнопки по нажатию на нее (она меняет текст в span):
+
+
+</script>
+</body>
+</html>

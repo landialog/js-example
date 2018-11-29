@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+Работа с CSS
+Повторите страницу по данному по образцу:
+    <input type="text" value="Куку" id="inp">
+        <input type="submit" value="Нажми на меня" onclick="func()">
+
+function func() {
+    let elem = document.getElementById('inp');
+elem.style.color = '#CC0000';
+elem.style.width = '200px';
+}
+
+
+    <input type="text" value="Куку" id="inp">
+        <input type="submit" value="Нажми на меня" onclick="func1()">
+        <input type="submit" value="Нажми потом на меня" onclick="func2()">
+
+   function func1() {
+       let elem = document.getElementById('inp');
+       elem.style.display = 'none';
+   }
+
+   function func2() {
+       let elem = document.getElementById('inp');
+       elem.style.display = 'inline-block';
+   }
+
+   <input type="text" value="Куку" id="inp"><br>
+       <input type="submit" value="Нажми на меня" onclick="func()">
+
+       function func() {
+           let elem = document.getElementById('inp');
+           elem.style.width = '300px';
+           elem.style.height = '150px';
+           elem.style.color = '#CC0000';
+           elem.style.borderRadius = '5px';
+           elem.value = 'Ой, я поменял свой текст и css!';
+
+       }
+
+
+   <input type="submit" value="Нажми на меня" onclick="func1()" id="inp1">
+       <input style="display: none" type="submit" value="Нажми отблокировать" onclick="func2()" id="inp2">
+
+       function func1() {
+           let elem = document.getElementById('inp1');
+           let elem2 = document.getElementById('inp2');
+           elem.disabled = true;
+           elem.value = 'О теперь не нажать!';
+
+           elem2.style.display = 'inline-block';
+       }
+
+   function func2() {
+       let elem = document.getElementById('inp1');
+       let elem2 = document.getElementById('inp2');
+       elem.disabled = false;
+       elem2.style.display = 'none';
+       elem.value = 'О! на меня снова можно нажать';
+   }
+
+
+   Кнопка считает кол-во нажатий по ней.
+   <input type="submit" value="0" onclick="func(this)" style="width: 150px">
+       function func(elem) {
+           elem.value++;
+       }
+?? У вас применяется решение
+  elem.value = parseInt(elem.value) + 1;
+Я сделал без parseInt, на что оно (parseInt) может повлиять если без него?
+
+
+   Повторите страницу по данному по образцу:
+   <input type="text" value="Куку" id="inp">
+       <input type="submit" value="Нажми на меня" onclick="func()">
+
+       function func() {
+           let elem = document.getElementById('inp');
+           elem.value = 'Мои css классы: eee www ddd';
+       }
+
+
+
+
+Работа с this
+Повторите страницу по данному по образцу:
+
+<input type="text" value="Нажми на меня" onfocus="func(this)" name="" id="">
+
+при фокусе в поле ввода
+function func(elem) {
+    alert(elem.value);
+}
+
+при фокусе в поле ввода
+function func(elem) {
+elem.value = 'Ой текст поменялся';
+}
+
+
+при фокусе в поле ввода и потом за пределами
+<input type="text" value="Нажми на меня" onfocus="func1(this)" onblur="func2(this)" name="" id="">
+
+function func1(elem) {
+elem.value = 'Ой текст поменялся';
+}
+
+function func2(elem) {
+    elem.value = 'Ой еще раз поменялся текст';
+}
+
+Повторить Это input type="submit".
+   <input type="submit" value="Нажми на меня" onclick="func(this)" >
+function func(elem) {
+    elem.value = 'Другой текст';
+}
+
+
+
+События через атрибуты
+Повторите страницу по данному по образцу:
+<input type="button" value="Нажми на меня!" onclick="func(this)" id="btn">
+  function func(elem) {
+      alert('Нажми на меня');
+  }
+
+Повторите страницу по данному по образцу:
+<input type="button" value="Наведи на меня" onmouseover="alert('Приветик')" id="">
+
+<input type="button" value="Двойной щелчок по мне" ondblclick="alert('Приветик')" >
+
+<div style="width: 300px; height: 50px; border: 1px solid #CC0000" id="test" onmouseout="alert('Ты куды ушел')">Наведи на меня мышь, а потом убери</div>
+
+Повторите страницу по данному по образцу:
+<input type="text" value="Ку-ку"  id="input">
+    <input type="submit" value="Нажми на меня" onclick="func()">
+    function func() {
+        alert('Привет');
+    }
+    
+    <input type="text" value="ку-ку"  name="" id="inp">
+<input type="submit" onclick="func()" id="">
+    function func() {
+        document.getElementById('inp').value='Ой текст поменялся';
+    }
+
+Повторите страницу по данному по образцу:
+<img src="https://rep.ru/files/models/widget_picture/32343/32343_photo_w980.jpg" height="200px" width="auto" id="image" alt="">
+    <input type="submit" value="Изменить картинку" onclick="func()">
+    function func() {
+        document.getElementById('image').src="https://sportfm.ru/upload/main/991/991bb4fae75a8324ab3dc26d61f1d879.jpg";
+    }
+
+
+<input type="submit" value="Нажми на меня" onclick="func(this)" name="" id="">
+    function func(elem) {
+        elem.disabled = true;
+        elem.value = 'О теперь на меня больше не нажать';
+    }
+
+
+
+Работа с this
+    повторить меняющаяся картинка
+    <img src="https://rep.ru/files/models/widget_picture/32343/32343_photo_w980.jpg" onmouseover="funcOn(this)" onmouseout="funcOut(this)" height="200px" width="auto" id="image" alt="">
+
+        function funcOn(elem) {
+            elem.src="https://sportfm.ru/upload/main/991/991bb4fae75a8324ab3dc26d61f1d879.jpg" ;
+        }
+
+        function funcOut(elem) {
+            elem.src="https://rep.ru/files/models/widget_picture/32343/32343_photo_w980.jpg" ;
+        }
+
+
+
+
+    Закрепление пройденного
+   <input type="text" value="привет" id="inp1">
+       <input type="text" value="пока" id="inp2">
+       <input type="submit" onclick="func()" value="Нажмите на меня">
+
+       function func() {
+           let elem1 = document.getElementById('inp1');
+           let elem2 = document.getElementById('inp2');
+
+           let val1 = elem1.value;
+           let val2 = elem2.value;
+
+           elem1.value = val2;
+           elem2.value = val1;
+       }
+
+
+
+По нажатию на кнопку в нижнем инпуте появится квадрат числа из верхнего инпута.
+<input type="text"  placeholder="Введите число" name="" id="inp1">
+    <input type="text"  value="Здесь появится результат" id="inp2">
+    <input type="submit" onclick="func()" >
+
+function func() {
+    let elem1 = document.getElementById('inp1').value;
+    let elem2 = document.getElementById('inp2');
+    elem2.value = Math.pow(elem1, 2);
+}
+
+
+
+По нажатию на кнопку в нижнем инпуте появится квадрат числа из верхнего инпута. Если введено не число - должна показаться ошибка.
+<input type="text"  placeholder="Введите число" name="" id="inp1">
+    <input type="text"  value="Здесь появится результат" id="inp2">
+    <input type="submit" onclick="func()" >
+
+    function func() {
+        let elem1 = document.getElementById('inp1').value;
+        let elem2 = document.getElementById('inp2');
+
+        if(Number(elem1)){
+            elem2.value = Math.pow(elem1, 2);
+        } else {
+            alert('Вы ввели не число!');
+        }
+    }
+P.S. У вас другое решение. А мое имеет право на правду?
+
+
+
+    Обратите внимание на курсор в различных состояниях.
+        <input type="submit" value="Нажмите на меня" onclick="func(this)">
+    function func(elem) {
+        elem.disabled = true;
+        elem.style.cursor = 'not-allowed';
+    }
+
+Не получается этот пример
+
+<input type="text" name="" id="inp">
+        <br><br><br>
+        <button type="submit" value="+" onclick="func(this)">Я добавилю +</button><br>
+    <button type="submit" value="-" onclick="func(this)">Я добавилю -</button><br>
+    <button type="submit" value="/" onclick="func(this)">Я добавилю /</button><br>
+    <button type="submit" value="*" onclick="func(this)">Я добавилю *</button>
+
+    <br><br><br>
+    <button type="submit" onclick="func(this)" value="1" style="width: 100px">1</button>
+
+
+
+    function func(elem, text) {
+   let input = document.getElementById('inp');
+   input.value = elem.value;
+}
+
+P.S.Я думал это решение будет через this, но не получается сохранять в inputе значение
+    А есть решение через this?
+
+
+</script>
+</body>
+</html>
